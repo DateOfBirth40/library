@@ -28,8 +28,35 @@ body {
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
     height: 200px;
     width: auto;
-    background-color: blue;
+    padding: 10px;
+    color: white;
+    background-color: rgb(98, 98, 167);
     border-radius: 8px;
+}
+
+.remove {
+    background-color: red;
+}
+
+.card button {
+    width: 80%;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(177, 176, 176);
+}
+
+.btn-light-green {
+    background-color: lightgreen;
+}
+
+.btn-light-red {
+    background-color: rgb(245, 82, 82);
 }
