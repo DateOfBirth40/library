@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 5fr;
+    background-color: rgb(224, 224, 224);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-area: 1/1/1/-1;
+    background-color: white;
+    padding: 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.card {
+    height: 200px;
+    width: auto;
+    background-color: blue;
+    border-radius: 8px;
+}
