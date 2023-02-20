@@ -1,4 +1,10 @@
+:root {
+    --gray: rgb(224, 224, 224);
+    --card-radius: 8px;
+}
+
 * {
+    font-family: Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -7,7 +13,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 100px 5fr;
-    background-color: rgb(224, 224, 224);
+    background-color: var(--gray);
 }
 
 .header {
@@ -19,9 +25,48 @@ body {
     padding: 20px;
 }
 
+.form-div {
+    background-color: var(--gray);
+    position: fixed;
+    left: 25%;
+    bottom: 30%;
+    display: none;
+    /* CHANGE THE ABOVE TO NONE */
+    border: 1px solid black;
+    border-radius: var(--card-radius);
+    text-align: center;
+    width: 50%;
+    padding: 10px;
+}
+
+#book-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+}
+
+/* #background {
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+} */
+
+input {
+    padding: 5px;
+    height: 30px;
+    border: none;
+    border-radius: var(--card-radius);
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+}
+
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 0.33fr));
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
     padding: 20px;
@@ -30,27 +75,37 @@ body {
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
     gap: 5px;
     height: 200px;
     width: auto;
     padding: 10px;
     color: white;
     background-color: rgb(98, 98, 167);
-    border-radius: 8px;
+    border-radius: var(--card-radius);
 }
 
-.remove {
-    background-color: red;
+.button-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    border: none;
+    border-radius: var(--card-radius);
+    background-color: rgb(177, 176, 176);
+}
+
+#add-book, #submit-form, .header button {
+    background-color: lightgreen;
+    width: 100px;
+    height: 30px;
 }
 
 .card button {
     width: 80%;
     height: 30px;
-    border: none;
-    border-radius: 8px;
-    background-color: rgb(177, 176, 176);
 }
 
 .btn-light-green {
