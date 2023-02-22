@@ -30,17 +30,19 @@ const isReadInput = document.querySelector('#read');
 // Functions
 function createBookObject(title, author, pages, isRead) {
   const newBook = new Book(title, author, pages, isRead);
+  console.log(newBook);
   return newBook;
 }
 
 function addBookToLibrary(newBook) {
   myLibrary.push(newBook);
-  return newBook;
+  console.log(newBook);
+//   return newBook;
 };
 
 function isReadChecked() {
-  const isRead = isReadInput.checked;
-  return isRead;
+  const isBookRead = isReadInput.checked;
+  return isBookRead;
 }
 
 console.log(isReadInput.checked);
@@ -64,6 +66,7 @@ function createBookCard(newBook) {
   removeBtn.textContent = 'Remove';
 
   if (newBook.isRead) {
+    // Can maybe change the above to isReadInput.checked
     readBtn.textContent = 'Read';
     readBtn.classList.add('btn-light-green');
   } else {
@@ -77,6 +80,21 @@ function createBookCard(newBook) {
   card.appendChild(readBtn);
   card.appendChild(removeBtn);
   container.appendChild(card);
+};
+
+function openForm() {
+  document.querySelector('.form-div').style.display = 'block';
+//   backgroundDiv.appendChild(body);
+//   backgroundDiv.style.backgroundColor = 'black|transparent';
+}
+function closeForm() {
+  document.querySelector('.form-div').style.display = 'none';
+}
+window.onclick = function(event) {
+  const modal = document.querySelector('.form-div');
+  if (event.target == modal) {
+    closeForm();
+  }
 };
 
 // User Interface
@@ -94,25 +112,10 @@ const submitForm = document.querySelector('#submit-form');
 addBook.addEventListener('click', openForm);
 submitForm.addEventListener('click', () => {
   closeForm();
-  addBookToLibrary(
-      createBookObject(titleInput.value, authorInput.value,
-          pagesInput.value, isReadInput.checked));
+  createBookObject(titleInput.value, authorInput.value,
+          pagesInput.value, isReadInput.checked);
+  addBookToLibrary(newBook);
   createBookCard(newBook);
 });
-
-function openForm() {
-  document.querySelector('.form-div').style.display = 'block';
-//   backgroundDiv.appendChild(body);
-//   backgroundDiv.style.backgroundColor = 'black|transparent';
-}
-function closeForm() {
-  document.querySelector('.form-div').style.display = 'none';
-}
-window.onclick = function(event) {
-  const modal = document.querySelector('.form-div');
-  if (event.target == modal) {
-    closeForm();
-  }
-};
 
 // console.log(newBook);
