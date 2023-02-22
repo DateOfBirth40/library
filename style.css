@@ -75,10 +75,12 @@ input {
 .card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     gap: 5px;
     height: 200px;
     width: auto;
-    padding: 10px;
+    padding: 15px;
     color: white;
     background-color: rgb(98, 98, 167);
     border-radius: var(--card-radius);
