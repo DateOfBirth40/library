@@ -116,6 +116,13 @@ button {
     background-color: rgb(177, 176, 176);
 }
 
+button:hover {
+    cursor: pointer;
+    color: white;
+    border: 1px solid white;
+    text-shadow: 1px;
+}
+
 #add-book, #submit-form, .header button {
     background-color: lightgreen;
     width: 100px;
