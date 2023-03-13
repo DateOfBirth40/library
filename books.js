@@ -17,6 +17,7 @@ class Book {
 const container = document.querySelector('.container');
 const addBook = document.querySelector('#add-book');
 const formDiv = document.querySelector('.form-div');
+const formBackground = document.querySelector('.form-background')
 const body = document.querySelector('.body');
 const backgroundDiv = document.createElement('div');
 backgroundDiv.setAttribute('id', 'background');
@@ -110,11 +111,13 @@ function removeBook(e) {
 function openForm() {
   bookForm.reset();
   document.querySelector('.form-div').style.display = 'block';
+  formBackground.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
 //   backgroundDiv.appendChild(body);
 //   backgroundDiv.style.backgroundColor = 'black|transparent';
 }
 function closeForm() {
   document.querySelector('.form-div').style.display = 'none';
+  formBackground.style.backgroundColor = '';
 }
 window.onclick = function(event) {
   const modal = document.querySelector('.form-div');
